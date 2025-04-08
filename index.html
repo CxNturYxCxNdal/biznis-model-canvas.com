@@ -265,6 +265,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
+            counter-reset: row-num;
         }
 
         th, td {
@@ -333,12 +334,12 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Счетчик строк таблицы (для визуального эффекта) */
-        tr td:first-child {
+        /* Счетчик строк таблицы (для правильной нумерации) */
+        tbody tr td:first-child {
             counter-increment: row-num;
         }
 
-        tr td:first-child strong::before {
+        tbody tr td:first-child strong::before {
             content: counter(row-num);
             display: inline-flex;
             align-items: center;
@@ -927,34 +928,9 @@
             opacity: 0.7;
         }
 
-        /* Анимация мигания для привлечения внимания к важным элементам */
-        @keyframes soft-pulse {
-            0% { opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { opacity: 0.8; }
-        }
-
-        .bank-indicator .score {
-            animation: soft-pulse 3s infinite;
-        }
-
-        /* Улучшенный внешний вид для мобильных устройств */
-        @media (max-width: 480px) {
-            .content-wrapper, .chart-section, .overview-section {
-                margin-left: -0.5rem;
-                margin-right: -0.5rem;
-                width: calc(100% + 1rem);
-                border-radius: 12px;
-            }
-            
-            .header {
-                margin-left: -0.5rem;
-                margin-right: -0.5rem;
-                width: calc(100% + 1rem);
-            }
-        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -994,7 +970,8 @@
                     <tr>
                         <td><strong>Kľúčové aktivity</strong><br><em>Aké kľúčové aktivity si vyžaduje vytvorenie očakávanej pridanej hodnoty? Výroba? Výskum a vývoj? Distribúcia? Marketing?</em></td>
                         <td>- Vývoj a podpora mobilnej aplikácie<br>- Spracovanie platieb a prevodov<br>- Poskytovanie úverov (spotrebiteľské, karty)<br>- Obsluha klientov cez online kanály<br>- Marketing a získavanie nových klientov</td>
-                        <td>- Poskytovanie širokého spektra bankových služieb (úvery, vklady, investície, poistenie)<br>- Rozvoj digitálnych kanálov<br>- Obsluha klientov cez rôzne kanály (online, pobočky)<br>- Riadenie rizík<br>- Marketing a predaj</td>
+
+<td>- Poskytovanie širokého spektra bankových služieb (úvery, vklady, investície, poistenie)<br>- Rozvoj digitálnych kanálov<br>- Obsluha klientov cez rôzne kanály (online, pobočky)<br>- Riadenie rizík<br>- Marketing a predaj</td>
                         <td>- Poskytovanie širokého spektra bankových služieb (úvery, vklady, hypotéky, poistenie)<br>- Rozvoj digitálnych kanálov a online služieb<br>- Obsluha klientov cez pobočky a online kanály<br>- Marketing a propagácia produktov<br>- Dodržiavanie regulačných požiadaviek</td>
                     </tr>
                     <tr>
@@ -1017,7 +994,8 @@
                     </tr>
                     <tr>
                         <td><strong>Zákaznícke segmenty</strong><br><em>Kto tvorí našu cieľovú skupinu? Zameriavame sa na jednu alebo viacero cieľových skupín? Kto sú naši najdôležitejší zákazníci? Orientujeme sa na celý ich vybraný segment?</em></td>
-                        <td>- Mladí a aktívni používatelia smartfónov<br>- Obyvatelia miest<br>- Používatelia, ktorí oceňujú pohodlie a rýchlosť online služieb<br>- Klienti, ktorí preferujú absenciu fyzických pobočiek</td>
+
+<td>- Mladí a aktívni používatelia smartfónov<br>- Obyvatelia miest<br>- Používatelia, ktorí oceňujú pohodlie a rýchlosť online služieb<br>- Klienti, ktorí preferujú absenciu fyzických pobočiek</td>
                         <td>- Široký okruh klientov: fyzické osoby, malé a stredné podniky, korporátni klienti<br>- Rôzne vekové skupiny a úrovne príjmu<br>- Klienti, ktorým záleží na online aj offline službách</td>
                         <td>- Široký okruh klientov: fyzické osoby, malé a stredné podniky, korporátni klienti<br>- Rôzne vekové skupiny a úrovne príjmu<br>- Klienti, ktorým záleží na stabilite a širokom spektre služieb<br>- Klienti, ktorí oceňujú rozvinutú sieť pobočiek</td>
                     </tr>
@@ -1037,7 +1015,7 @@
             </div>
         </div>
 
-        <div class="chart-section">
+<div class="chart-section">
             <h3>Graf - Porovnanie biznis modelov bánk</h3>
             
             <div class="chart-legend">
@@ -1119,7 +1097,8 @@
                             <td>
                                 <div class="value-indicator">
                                     <div class="value-bar tatra-value" style="width: 50%;"></div>
-                                    <span>5/10</span>
+
+<span>5/10</span>
                                 </div>
                             </td>
                             <td>
@@ -1199,7 +1178,8 @@
                                     <div class="value-bar monobank-value" style="width: 40%;"></div>
                                     <span>4/10</span>
                                 </div>
-                            </td>
+
+</td>
                             <td>
                                 <div class="value-indicator">
                                     <div class="value-bar tatra-value" style="width: 40%;"></div>
@@ -1255,7 +1235,7 @@
         </div>
         
         <div class="footer">
-            <p>Business Model Canvas porovnanie | Dátum vytvorenia: 7.4.2025</p>
+            <p>| Business Model Canvas porovnanie | </p>
         </div>
     
         <script>
